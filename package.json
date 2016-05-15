@@ -1,0 +1,23 @@
+{
+  "name": "dripr-embed",
+  "version": "1.0.0",
+  "description": "standalone library for embedding dripr content",
+  "main": "index.js",
+  "scripts": {
+    "build-debug": "browserify index.js -d --s Dripr > dist/dripr-embed.js",
+    "build-min": "browserify index.js --s Dripr | uglifyjs -c > dist/dripr-embed.min.js",
+    "build": "npm run build-debug && npm run build-min",
+    "watch": "watchify index.js -d --s Dripr -o dist/dripr-embed.js -v"
+  },
+  "keywords": [
+    "dripr",
+    "embed"
+  ],
+  "author": "Goncalo Margalho",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "uglify-js": "^2.6.2",
+    "watchify": "^3.7.0"
+  }
+}
